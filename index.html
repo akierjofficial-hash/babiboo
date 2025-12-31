@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Love</title>
+
+  <!-- Handwritten-ish fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="paper">
+    <div class="app">
+
+      <!-- INTRO -->
+      <section class="screen active" id="screen-intro" aria-label="Intro screen">
+        <div class="top-doodle" aria-hidden="true">
+          <div class="doodle-bear">ʕ•ᴥ•ʔ♡</div>
+        </div>
+
+        <h1 class="title">
+          Hello <span class="accent" id="theirName">My Love</span>!
+        </h1>
+        <p class="subtitle">Do you want to see your gift?</p>
+
+        <div class="btn-row">
+          <button class="btn primary" id="btnYes">YES PLEASE</button>
+          <button class="btn ghost" id="btnNo">NO THANKS</button>
+        </div>
+
+        <p class="tiny-note" id="noHint" aria-live="polite"></p>
+      </section>
+
+      <!-- MENU -->
+      <section class="screen" id="screen-menu" aria-label="Gift menu">
+        <h2 class="title small">THESE ARE FOR YOU!</h2>
+        <p class="subtitle">I hope you like it. I love you.</p>
+
+        <div class="grid">
+          <button class="tile" data-go="screen-photos" aria-label="Open photos">
+            <div class="tile-icon" aria-hidden="true">🖼️</div>
+          </button>
+
+          <button class="tile" data-go="screen-flowers" aria-label="Open virtual flowers">
+            <div class="tile-icon" aria-hidden="true">💐</div>
+          </button>
+
+          <button class="tile" data-go="screen-vault" aria-label="Open secret vault">
+            <div class="tile-icon" aria-hidden="true">🔒💕</div>
+          </button>
+
+          <button class="tile" data-go="screen-letter" aria-label="Open love letter">
+            <div class="tile-icon" aria-hidden="true">💌</div>
+          </button>
+        </div>
+
+        <div class="menu-row">
+          <button class="btn secondary" data-go="screen-song">I PLAY NII BAAAA</button>
+        </div>
+      </section>
+
+      <!-- PHOTOS -->
+      <section class="screen" id="screen-photos" aria-label="Photos screen">
+        <div class="screen-header">
+          <h2 class="title small">Photos for you</h2>
+          <button class="btn pill" data-go="screen-menu">RETURN</button>
+        </div>
+
+        <div class="album-bar" role="tablist" aria-label="Photo albums">
+          <button class="album active" data-album="photobooth" role="tab">ME AND YOU</button>
+          <button class="album" data-album="instams" role="tab">My Gorgeous Babii</button>
+          <button class="album" data-album="recent" role="tab">recent</button>
+          <button class="album" data-album="grad" role="tab">Random hehe</button>
+        </div>
+
+        <p class="hint">Drag the polaroids around loveyy💗</p>
+
+        <div class="stage" id="polaroidStage" aria-label="Polaroid stage"></div>
+      </section>
+
+      <!-- FLOWERS (REFERENCE-STYLE NIGHT SCENE) -->
+      <section class="screen" id="screen-flowers" aria-label="Virtual flowers screen">
+        <div class="screen-header">
+          <h2 class="title small">Virtual Flowers</h2>
+          <button class="btn pill" data-go="screen-menu">RETURN</button>
+        </div>
+
+        <div class="flowers-wrap">
+          <div class="flower-card" aria-label="Bouquet card">
+
+            <div class="night-scene" id="nightScene" aria-hidden="true">
+              <div class="float-layer" id="floatLayer"></div>
+
+              <div class="garden">
+                <div class="blade b1"></div>
+                <div class="blade b2"></div>
+                <div class="blade b3"></div>
+                <div class="blade b4"></div>
+                <div class="blade b5"></div>
+                <div class="blade b6"></div>
+
+                <div class="plant" id="plant">
+                  <div class="lily-bouquet">
+                    <div class="lily-stem"></div>
+                    <div class="lily-leaf leaf1"></div>
+                    <div class="lily-leaf leaf2"></div>
+
+                    <div class="lily main">
+                      <div class="petal p1"></div>
+                      <div class="petal p2"></div>
+                      <div class="petal p3"></div>
+                      <div class="petal p4"></div>
+                      <div class="petal p5"></div>
+                      <div class="petal p6"></div>
+
+                      <div class="lily-center">
+                        <div class="pistil"></div>
+                        <div class="stamen s1"></div>
+                        <div class="stamen s2"></div>
+                        <div class="stamen s3"></div>
+                        <div class="stamen s4"></div>
+                        <div class="stamen s5"></div>
+                        <div class="stamen s6"></div>
+                      </div>
+                    </div>
+
+                    <div class="bud"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flower-text">
+              <div class="flower-title">LILIES</div>
+              <div class="flower-sub">purple lilies for my babi 💜</div>
+            </div>
+          </div>
+
+          <div class="bubble-layer" id="bubbleLayer" aria-label="Message bubbles"></div>
+        </div>
+
+        <p class="hint">Tap a bubble to “pop” it ✨</p>
+      </section>
+
+      <!-- SONG (LOCAL VIDEO) -->
+      <section class="screen" id="screen-song" aria-label="Song screen">
+        <div class="screen-header">
+          <h2 class="title small">IIIILOOOOOVEEEEE</h2>
+          <button class="btn pill" data-go="screen-menu">RETURN</button>
+        </div>
+
+        <p class="subtitle handwritten">this song reminds me of you ( >u&lt; )</p>
+
+        <div class="card">
+          <div class="video">
+            <video id="localVideo" controls playsinline preload="metadata">
+              <source id="videoSource" src="" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="song-row">
+            <div class="song-title" id="songTitle">Chest Pain</div>
+            <div class="song-artist" id="songArtist">— Malcolm Todd</div>
+          </div>
+
+          <div class="secret" id="secretMsg">secret message: 143 155</div>
+        </div>
+      </section>
+
+      <!-- LETTER -->
+      <section class="screen" id="screen-letter" aria-label="Love letter screen">
+        <div class="screen-header">
+          <h2 class="title small">Message for my love</h2>
+          <button class="btn pill" data-go="screen-menu">RETURN</button>
+        </div>
+
+        <div class="letter card">
+          <p id="letterBody"></p>
+          <div class="sig" id="letterSig"></div>
+        </div>
+      </section>
+
+      <!-- VAULT (LOCKS) -->
+      <section class="screen" id="screen-vault" aria-label="Secret vault screen">
+        <div class="screen-header">
+          <h2 class="title small">Secret Vault</h2>
+          <button class="btn pill" data-go="screen-menu">RETURN</button>
+        </div>
+
+        <div class="card vault">
+          <p class="subtitle">Enter the secret code, pag waka kabalo dinako nimo hmpp! 💕</p>
+
+          <div class="vault-row">
+            <input id="vaultInput" class="vault-input" inputmode="numeric" maxlength="6" placeholder="e.g. 0214" />
+            <button id="vaultBtn" class="btn primary">UNLOCK</button>
+          </div>
+
+          <p class="tiny-note" id="vaultHint" aria-live="polite"></p>
+
+          <div id="vaultReward" class="vault-reward hidden">
+            <h3 class="handwritten">You unlocked it!</h3>
+            <p class="subtitle">Your reward: a little “love coupon” 💗</p>
+            <div class="coupon">
+              <div class="coupon-title">Life Time With Me</div>
+              <div class="coupon-body">Redeem for: your favorite food + my full attention + no phone. hehehe</div>
+              <div class="coupon-foot">Valid forever, syempreee♡</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLOATING HEARTS -->
+      <div id="hearts" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
